@@ -11,6 +11,7 @@
 
 ## 브렌치 생성/작성 규칙
 - 브렌치를 생성하는 규칙은 다음과 같다.
-  - WhatAbout/Type/Number(ex. tanstackQuery/memo/1)
+  - Trand/Type/issueN(ex. tanstackQuery/memo/1)
   - Type의 종류
-    - Memo
+    - memo
+    - config(개발환경 설정)
