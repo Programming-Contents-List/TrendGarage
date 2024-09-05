@@ -13,5 +13,8 @@
     "start": "echo \"여기에 스타트 스크립트를 추가합니다.\""
   },
   "author": "4Bee <4bee.code@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
 }
