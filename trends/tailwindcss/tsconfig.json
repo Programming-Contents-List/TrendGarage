@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.json", // 루트의 설정을 상속받음
+  "compilerOptions": {
+    "outDir": "./TextAdventureGame/dist", // 빌드된 파일을 저장할 위치
+    "rootDir": "./TextAdventureGame/src",
+  },
+  // "include": ["src/**/*"],
+  "include": [
+    "./TextAdventureGame/src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
