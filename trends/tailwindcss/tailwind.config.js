@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundColor: {
+        'body-color': '#f3f4f6', // 원하는 색상 값
+      },
       spacing: {
         'padding-01': '18rem',
         'padding-02': '21rem',

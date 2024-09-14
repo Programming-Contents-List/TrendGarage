@@ -4,7 +4,11 @@
 /* 결론 @import,@apply문을 사용하려면 index.css에서 커스텀하고 사용하는 것을 추천*/
 /* postcss-import가 왜 적용이 안되는지 이해 불가. */
 /* @import "./another.css"; */
-
+@layer base {
+  body {
+    @apply bg-primary text-white; /* 여기에 원하는 디자인 시스템 색상을 적용 */
+  }
+}
 .test-padding {
   @apply p-[30px];
 }
