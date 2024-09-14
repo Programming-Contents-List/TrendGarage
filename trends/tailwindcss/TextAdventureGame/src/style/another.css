@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.test-backgroud {
-  background-color: #3b99f6;
+.test-padding {
+  @apply p-8;
 }

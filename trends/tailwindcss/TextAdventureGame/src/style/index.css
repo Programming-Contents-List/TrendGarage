@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* 결론 @import,@apply문을 사용하려면 index.css에서 커스텀하고 사용하는 것을 추천*/
+/* postcss-import가 왜 적용이 안되는지 이해 불가. */
+/* @import "./another.css"; */
+
+.test-padding {
+  @apply p-[30px];
+}
