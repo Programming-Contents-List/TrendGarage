@@ -1,0 +1,16 @@
+{
+  "name": "trendgarage",
+  "packageManager": "npm@10.8.1",
+  "workspaces": [
+    "trends/*"
+  ],
+  "version": "1.0.0",
+  "description": "트렌드를 따라가지위해 공부한 기록 입니다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
