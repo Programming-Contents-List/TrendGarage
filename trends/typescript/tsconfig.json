@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist",     // 하위 디렉토리의 컴파일된 파일이 저장될 위치
+    "rootDir": "./src"      // 하위 디렉토리의 소스 코드 위치
+  },
+  "include": ["src/**/*"],   // 포함할 파일 경로
+  "exclude": ["node_modules", "dist"]  // 제외할 경로
+}
