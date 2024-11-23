@@ -1,4 +1,4 @@
-const myTest = () => {
+const MyTest = () => {
   return (
     <div>
       <span>test</span>
@@ -6,4 +6,4 @@ const myTest = () => {
   );
 };
 
-export default myTest();
+export default MyTest;

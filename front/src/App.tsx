@@ -1,11 +1,10 @@
-// import React from 'react';
-// import logo from './logo.svg';
-// import './App.css';
+import MyTest from './MyTest';
 
 const App = () => {
   return (
     <div>
       <span>test</span>
+      <MyTest />
     </div>
   );
 };
