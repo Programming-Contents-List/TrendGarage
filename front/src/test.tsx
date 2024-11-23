@@ -1,5 +1,9 @@
 const myTest = () => {
-  return 'test';
+  return (
+    <div>
+      <span>test</span>
+    </div>
+  );
 };
 
-myTest();
+export default myTest();
