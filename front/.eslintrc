@@ -25,6 +25,8 @@
     }
   },
   "rules": {
+    "react/function-component-definition": "off",
+    // 이 함수형 컴포넌트를 어떤 함수 유형으로 사용할지 미리 정하고 rules에 명시해 두어야 에러가 발생하지 않는다. 따라서 그라운드 룰이 명확하지 않으면 사용하지 않는게 좋다.
     "react/react-in-jsx-scope": "off",
     "react/jsx-uses-react": "off",
     "linebreak-style": 0,
@@ -50,11 +52,11 @@
     "no-empty-pattern": 0,
     "no-alert": 0,
     "react-hooks/exhaustive-deps": 0,
-    "prefer-arrow/prefer-arrow-functions": "error",
-    "react/function-component-definition": ["error", {
-      "named": "function-declaration",
-      "unnamed": "arrow-function"
-    }]
+    "prefer-arrow/prefer-arrow-functions": "error"
+    // "react/function-component-definition": ["error", {
+    //   "named": "function-declaration",
+    //   "unnamed": "arrow-function"
+    // }]
   },
   "settings": {
     "import/parsers": {
