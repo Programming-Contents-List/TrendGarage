@@ -1,80 +1,75 @@
 import React, { useState } from 'react';
-import { createClient } from '@supabase/supabase-js';
+import fetchSignUp from '../Controller/fetch.signup';
 
-const supabase = createClient(
-  'https://fsrotjrwllkimiidizgk.supabase.co',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZzcm90anJ3bGxraW1paWRpemdrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzMwMjgzMTQsImV4cCI6MjA0ODYwNDMxNH0.uiFog4O3BbOZhBC1z0LRFTtEE4p4z3PK5VQ5wKrRHzg',
-);
-
-const Login: React.FC = () => {
+const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
+  const [admin, setAdmin] = useState(false);
+  const [job, setJob] = useState('');
+  const [nickname, setNickName] = useState('');
   const [responseMessage, setResponseMessage] = useState('');
 
   const handleSignUp = async () => {
-    try {
-      const { data, error } = await supabase.auth.signUp({
-        email,
-        password,
-        options: {
-          data: {
-            name, // 사용자 정의 메타데이터로 전달
-          },
-        },
-      });
-
-      if (error) {
-        throw error;
-      } else {
-        throw data;
-      }
-
-      setResponseMessage('Signup successful! Check your email for confirmation.');
-    } catch (error: any) {
-      setResponseMessage(error.message || 'Signup failed. Please try again.');
-    }
+    const { responseMessage } = await fetchSignUp({
+      email,
+      password,
+      admin,
+      job,
+      nickname,
+    });
+    setResponseMessage(responseMessage);
   };
 
   return (
-    <div style={{ maxWidth: '400px', margin: 'auto', padding: '20px' }}>
-      <h1>Sign Up</h1>
+    <div className='max-w-md p-5 mx-auto'>
+      <h1 className='mb-5 text-2xl font-bold'>Sign Up</h1>
+      {/* Nickname */}
       <input
         type='text'
-        placeholder='Name'
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        style={{ display: 'block', width: '100%', marginBottom: '10px', padding: '8px' }}
+        placeholder='nickname'
+        value={nickname}
+        onChange={(e) => setNickName(e.target.value)}
+        className='block w-full p-2 mb-3 border border-gray-300 rounded'
       />
+      {/* Job */}
+      <select
+        value={job}
+        onChange={(e) => setJob(e.target.value)}
+        className='block w-full p-2 mb-3 border border-gray-300 rounded'
+      >
+        <option value=''>Select your job</option>
+        <option value='Front-Developer'>프론트 개발자</option>
+        <option value='Back-Developer'>백엔드 개발자</option>
+        <option value='Full-Developer'>풀스택 개발자</option>
+        <option value='Designer'>디자이너</option>
+        <option value='Manager'>기획자</option>
+        <option value='Student'>학생</option>
+      </select>
+      {/* Email */}
       <input
         type='email'
         placeholder='Email'
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        style={{ display: 'block', width: '100%', marginBottom: '10px', padding: '8px' }}
+        className='block w-full p-2 mb-3 border border-gray-300 rounded'
       />
+      {/* Password */}
       <input
         type='password'
         placeholder='Password'
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        style={{ display: 'block', width: '100%', marginBottom: '10px', padding: '8px' }}
+        className='block w-full p-2 mb-3 border border-gray-300 rounded'
       />
+      {/* Sign Up Button */}
       <button
         onClick={handleSignUp}
         type='button'
-        style={{
-          width: '100%',
-          padding: '10px',
-          backgroundColor: '#007bff',
-          color: 'white',
-          border: 'none',
-          borderRadius: '5px',
-        }}
+        className='w-full p-3 font-bold text-white bg-blue-500 rounded hover:bg-blue-600'
       >
         Sign Up
       </button>
-      {responseMessage && <p style={{ marginTop: '20px', color: 'red' }}>{responseMessage}</p>}
+      {responseMessage && <p className='mt-5 text-red-500'>{responseMessage}</p>}
     </div>
   );
 };
