@@ -6,7 +6,7 @@ const supabase = createClient(
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZzcm90anJ3bGxraW1paWRpemdrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzMwMjgzMTQsImV4cCI6MjA0ODYwNDMxNH0.uiFog4O3BbOZhBC1z0LRFTtEE4p4z3PK5VQ5wKrRHzg',
 );
 
-const Signup: React.FC = () => {
+const Login: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
@@ -26,6 +26,8 @@ const Signup: React.FC = () => {
 
       if (error) {
         throw error;
+      } else {
+        throw data;
       }
 
       setResponseMessage('Signup successful! Check your email for confirmation.');
@@ -77,4 +79,4 @@ const Signup: React.FC = () => {
   );
 };
 
-export default Signup;
+export default Login;
