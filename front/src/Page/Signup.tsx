@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import fetchSignUp from '../Controller/fetch.signup';
 
-const Login = () => {
+const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [admin, setAdmin] = useState(false);
@@ -74,4 +74,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;

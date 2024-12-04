@@ -1,12 +1,5 @@
 import supabaseInstance from '../Model/fetch.supabase.instance';
-
-interface SignUpParams {
-  email: string;
-  password: string;
-  admin: boolean;
-  job?: string; // Optional: name은 필수가 아닐 수 있음
-  nickname?: string;
-}
+import { SignUpParams } from '../Types/auth';
 
 const fetchSignUp = async ({ email, password, admin, job, nickname }: SignUpParams) => {
   try {
